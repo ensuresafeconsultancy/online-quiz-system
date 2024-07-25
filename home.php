@@ -1,11 +1,11 @@
 <?php 
 session_start();
 
-if(!isset($_SESSION['examineeSession']['examineenakalogin']) == true) header("location:index.php");
+if(!isset($_SESSION['admin']['adminnakalogin']) == true) header("location:index.php");
 
 
  ?>
-<?php include("conn.php"); ?>
+<?php include("../../conn.php"); ?>
 <!-- MAO NI ANG HEADER -->
 <?php include("includes/header.php"); ?>      
 
@@ -25,19 +25,36 @@ if(!isset($_SESSION['examineeSession']['examineenakalogin']) == true) header("lo
 
    if($page != '')
    {
-     if($page == "exam")
+     if($page == "add-course")
      {
-       include("pages/exam.php");
+     include("pages/add-course.php");
      }
-     else if($page == "result")
+     else if($page == "manage-course")
      {
-       include("pages/result.php");
+     	include("pages/manage-course.php");
      }
-     else if($page == "myscores")
+     else if($page == "manage-exam")
      {
-       include("pages/myscores.php");
+      include("pages/manage-exam.php");
      }
-     
+     else if($page == "manage-examinee")
+     {
+      include("pages/manage-examinee.php");
+     }
+     else if($page == "ranking-exam")
+     {
+      include("pages/ranking-exam.php");
+     }
+     else if($page == "feedbacks")
+     {
+      include("pages/feedbacks.php");
+     }
+     else if($page == "examinee-result")
+     {
+      include("pages/examinee-result.php");
+     }
+
+       
    }
    // Else ang home nga page mo display
    else
@@ -53,5 +70,3 @@ if(!isset($_SESSION['examineeSession']['examineenakalogin']) == true) header("lo
 <?php include("includes/footer.php"); ?>
 
 <?php include("includes/modals.php"); ?>
-
-
